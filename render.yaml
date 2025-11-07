@@ -2,13 +2,5 @@ services:
   - type: web
     name: astrolog-backend
     env: python
-    rootDir: backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-
-  - type: web
-    name: astrolog-frontend
-    env: node
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python3 -m uvicorn backend.main:app --host 0.0.0.0 --port $PORT
