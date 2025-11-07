@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import chart
+from backend import chart
 
 # Create FastAPI app
 app = FastAPI(title="Astrolog API", version="0.1.0")
